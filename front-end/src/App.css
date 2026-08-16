@@ -37,18 +37,35 @@
   margin: 25px;
   padding: 7px;
   width: 300px;
-  border: 1px solid skyblue;
+  border: 1px solid darkgreen;
 }
 
-.register{
+.register, .product{
   margin-left: 30%;
+}
+
+.logo{
+  width: 80px;
+    float: left;
+    border-radius: 100%;
+    margin-top: 1.7px;
+    margin-left: 20px;
+}
+
+.nav-right{
+  text-align: right;
+}
+
+.login{
+  margin-left: 30%;
+  margin-top: 100px;
 }
 
 .appButton{
   margin: 25px;
   padding: 10px;
   width: 150px;
-  background-color: skyblue;
+  background-color: green;
   border: 1px solid;
   cursor: pointer;
 }
