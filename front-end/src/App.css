@@ -61,6 +61,13 @@
   margin-top: 100px;
 }
 
+.invalid-input{
+  color: red;
+  margin-top: -25px;
+  display: block;
+  margin-left: -400px;
+}
+
 .appButton{
   margin: 25px;
   padding: 10px;
