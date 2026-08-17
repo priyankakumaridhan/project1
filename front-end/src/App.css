@@ -76,6 +76,21 @@
   border: 1px solid;
   cursor: pointer;
 }
+
+.product-list{
+  margin-top:40px;
+}
+
+.product-list ul li{
+  display: inline-block;
+  border: 1px solid green;
+  padding: 5px;
+  width: 150px;
+}
+
+.product-list ul{
+  margin: 0;
+}
  
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
