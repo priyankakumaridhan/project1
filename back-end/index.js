@@ -28,12 +28,26 @@ app.post("/login", async (req, resp) => {
     } else {
         resp.send({ result: 'no user found' });
     }
-
-    app.post("/add-product", async (req, resp) => {
-        let product = new Product(req.body);
-        let result = await product.save();
-        resp.send(result);
-    })
-
 })
+
+app.post("/add-product", async (req, resp) => {
+    let product = new Product(req.body);
+    let result = await product.save();
+    resp.send(result);
+})
+
+app.get("/products", async (req, resp)=>{
+let Products =await Product.find()
+if(Products.length>0){
+    resp.send(Products)
+}else{
+    resp.send({result:"No Products found"})
+}
+});
+
+app.delete("/product/:id", (req, resp)=>{
+    const result = await product.deleteOne({_id:req.params.id})
+    resp.send(result);
+})
+
 app.listen(5000);
