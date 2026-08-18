@@ -45,8 +45,8 @@ if(Products.length>0){
 }
 });
 
-app.delete("/product/:id", (req, resp)=>{
-    const result = await product.deleteOne({_id:req.params.id})
+app.delete("/product/:id", async (req, resp)=>{
+    const result = await Product.deleteOne({_id:req.params.id})
     resp.send(result);
 })
 
