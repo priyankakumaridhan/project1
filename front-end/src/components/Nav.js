@@ -11,7 +11,7 @@ const Nav = () => {
         <div>
             <img alt="logo" className="logo" src="https://t4.ftcdn.net/jpg/02/86/20/27/360_F_286202792_yLD4HEmCF2YpIgevD2sNnOQ8PambyfZn.jpg"/>
             {auth ? <ul className="nav-ul">
-                <li><Link to="/home">Home Page</Link></li>
+                <li><Link to="/update">Update Product</Link></li>
                 <li><Link to="/about">About </Link></li>
                 <li><Link to="/product">Products </Link></li>
                 <li><Link to="/add-product">AddProduct </Link></li>
