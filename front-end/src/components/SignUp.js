@@ -10,7 +10,7 @@ const SignUp=()=>{
         const auth= localStorage.getItem('user');
         if(auth)
         {
-          navigate('/about')
+          navigate('/product')
         }
     })
 
@@ -25,9 +25,10 @@ const SignUp=()=>{
         });
         result = await result.json()
         console.warn(result);
-        localStorage.setItem("user",JSON.stringify(result));
+        localStorage.setItem("user",JSON.stringify(result.result));
+        localStorage.setItem("token",JSON.stringify(result.auth));
         if (result){
-            navigate('/about')
+            navigate('/product')
 
         }
     } 

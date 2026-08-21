@@ -9,14 +9,22 @@ const Products=()=>{
         getProducts();
     }, []);
     const getProducts = async ()=>{
-        let result = await fetch('http://localhost:5000/products');
+        let result = await fetch('http://localhost:5000/products',{
+            headers:{
+                authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+            }
+        });
+        
         result= await result.json();
         setProducts(result);
         console.warn('PRODUCTs',result );
     }
     const deleteProduct= async (id)=>{
          let result= await fetch(`http://localhost:5000/product/${id}`,{
-            method:"Delete"
+            method:"Delete",
+             headers:{
+                authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+            }
          });
          result = await result.json()
          if(result)
@@ -26,9 +34,32 @@ const Products=()=>{
          }
     };
 
+
+    const searchHandle =async (event)=>{
+        // console.warn(event.target.value)
+        let key = event.target.value;
+        if(key){
+let result = await fetch(`http://localhost:5000/search/${key}`,{
+     headers:{
+                authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+            }
+})
+        result=await result.json();
+        if(result){
+            setProducts(result)
+        }
+        }else{
+            getProducts()
+        }
+        
+    }
+
     return(
         <div className="product-list">
             <h1>Produts list</h1>
+            <input type='text' className='search-product-box' placeholder='search product'
+            onChange={searchHandle}
+            />
             <ul>
                 <li>S No.</li>
                 <li>Name</li>
@@ -38,7 +69,7 @@ const Products=()=>{
                 <li>Operation</li>
             </ul>
             {
-                products.map((item, index)=>
+               products.length>0 ? products.map((item, index)=>
             <ul key = {item._id}>
                 <li>{index+1}</li>
                 <li>{item.name}</li>
@@ -49,6 +80,7 @@ const Products=()=>{
                 <Link to={'/update/'+item._id}>Update</Link></li>
             </ul>
   )
+  :<h1>no result found</h1>
             }
         </div>
     )

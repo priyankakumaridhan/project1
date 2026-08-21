@@ -7,7 +7,7 @@ const Login=()=>{
     useEffect(()=>{
         const auth= localStorage.getItem('user');
         if(auth){
-            navigate('/about')
+            navigate('/product')
         }
     })
     const handleLogin=async ()=>{
@@ -21,9 +21,10 @@ const Login=()=>{
         });
         result=await result.json();
         console.warn(result)
-        if(result.name){
-                localStorage.setItem("user",JSON.stringify(result));
-                navigate('/about')
+        if(result.auth){
+                localStorage.setItem("user",JSON.stringify(result.user));
+                localStorage.setItem("token",JSON.stringify(result.auth));
+                navigate('/product')
             }else{
             alert("please enter correct details")
         }
