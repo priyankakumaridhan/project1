@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import { MemoryRouter } from 'react-router-dom';
+import Nav from './components/Nav.js';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('nav shows auth links when logged out', () => {
+  localStorage.clear();
+  render(<MemoryRouter><Nav /></MemoryRouter>);
+  expect(screen.getByText(/Login/i)).toBeInTheDocument();
+  expect(screen.getByText(/Sign Up/i)).toBeInTheDocument();
 });

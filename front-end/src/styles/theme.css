@@ -1,0 +1,76 @@
+:root {
+  /* ---- color: light ---- */
+  --bg: #F7F9F8;
+  --surface: #FFFFFF;
+  --surface-2: #FAFBFB;
+  --border: #E3E7E6;
+  --border-subtle: #EFF2F1;
+  --text: #10141A;
+  --muted: #5F6B71;
+  --faint: #9AA4A0;
+  --accent: #047857;
+  --accent-hover: #065F46;
+  --accent-subtle-bg: #D1FAE5;
+  --accent-subtle-text: #065F46;
+  --on-accent: #FFFFFF;
+  --danger: #DC2626;
+  --danger-hover: #B91C1C;
+  --danger-subtle: #FEE2E2;
+  --focus-ring: rgba(4, 120, 87, 0.30);
+  --shadow-sm: 0 1px 2px rgba(16, 20, 26, 0.05);
+  --shadow-md: 0 10px 30px rgba(16, 20, 26, 0.14);
+  --overlay: rgba(16, 20, 26, 0.45);
+  --skeleton: linear-gradient(90deg, #EFF2F1 25%, #F7F9F8 50%, #EFF2F1 75%);
+
+  /* ---- spacing ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+
+  /* ---- radius ---- */
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-pill: 999px;
+
+  /* ---- type ---- */
+  --fs-xs: 11px;
+  --fs-sm: 12.5px;
+  --fs-base: 13px;
+  --fs-lg: 16px;
+  --fs-xl: 19px;
+  --fs-2xl: 24px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --transition: 140ms ease;
+  --nav-h: 56px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0F1115;
+  --surface: #171A21;
+  --surface-2: #12151B;
+  --border: #262B36;
+  --border-subtle: #21262F;
+  --text: #E7EAF0;
+  --muted: #9AA4B2;
+  --faint: #6B7480;
+  --accent: #34D399;
+  --accent-hover: #6EE7B7;
+  --accent-subtle-bg: #1F3A31;
+  --accent-subtle-text: #6EE7B7;
+  --on-accent: #08130F;
+  --danger: #F87171;
+  --danger-hover: #FCA5A5;
+  --danger-subtle: #3A1F1F;
+  --focus-ring: rgba(52, 211, 153, 0.32);
+  --shadow-sm: none;
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --overlay: rgba(0, 0, 0, 0.6);
+  --skeleton: linear-gradient(90deg, #21262F 25%, #262B36 50%, #21262F 75%);
+}

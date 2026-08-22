@@ -33,17 +33,45 @@ const SignUp=()=>{
         }
     } 
     return(
-        <div className="register">
-            <h1>Register</h1>
-            <input className= "inputBox" type="text" 
-            value={name} onChange={(e)=>setName(e.target.value)} placeholder="Enter Name"/>
+        <div className="auth">
+            <h1 className="page-title">Create account</h1>
+            <p className="page-subtitle">Set up your dashboard in a few seconds.</p>
 
-            <input className= "inputBox" type="text" 
-            value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter Email"/>
-
-            <input className= "inputBox" type="password" 
-            value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
-            <button onClick={collectData} className= "appButton" type="button">Sign Up</button>
+            <div className="card card__pad" style={{ marginTop: 'var(--sp-4)' }}>
+                <div className="field">
+                    <label className="field__label" htmlFor="signup-name">Name</label>
+                    <input
+                        id="signup-name"
+                        className="input"
+                        type="text"
+                        value={name}
+                        onChange={(e)=>setName(e.target.value)}
+                    />
+                </div>
+                <div className="field">
+                    <label className="field__label" htmlFor="signup-email">Email</label>
+                    <input
+                        id="signup-email"
+                        className="input"
+                        type="email"
+                        value={email}
+                        onChange={(e)=>setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="field">
+                    <label className="field__label" htmlFor="signup-password">Password</label>
+                    <input
+                        id="signup-password"
+                        className="input"
+                        type="password"
+                        value={password}
+                        onChange={(e)=>setPassword(e.target.value)}
+                    />
+                </div>
+                <div className="form-actions">
+                    <button onClick={collectData} className="btn btn--primary" type="button">Sign Up</button>
+                </div>
+            </div>
         </div>
     )
 }
